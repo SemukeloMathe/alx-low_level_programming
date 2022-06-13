@@ -21,4 +21,4 @@ void puts_half(char *str)
 		pos++;
 	}
 	_putchar(10);
-}i
+}
