@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * swap_int - swaps the values of two integers.
  * @a: first pointer.
@@ -7,9 +6,9 @@
  */
 void swap_int(int *a, int *b)
 {
-	int tmp;
+	int temp;
 
-	tmp = *a;
+	temp = *a;
 	*a = *b;
-	*b = tmp;
-}	
+	*b = temp;
+}
