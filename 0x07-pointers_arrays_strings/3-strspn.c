@@ -1,26 +1,47 @@
 #include "main.h"
+
+int in_accept(char c, char *accept);
+
 /**
-  * _strspn - gets the length of a prefix substring.
-  * @s: first char.
-  * @accept: second char.
-  *
-  * Return: count.
-  */
+ * _strspn - gets the length of a prefix substring
+ * @s: string to check
+ * @accept: string containing the only accepted characters
+ *
+ * Return: the number of bytes in the initial segment of s which consist
+ * only of bytes from accept
+ */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int index, index2, count;
+	unsigned int length = 0;
+	unsigned int i;
 
-	count = 0;
-	for (index = 0; s[index] != 0; index++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[index] == ' ')
-		{
-			break;
-		}
+		if (in_accept(s[i], accept))
+			length++;
 		else
-			for (index2 = 0; accept[index2] != 0; index2++)
-				if (s[index] == accept[index2])
-					count++;
+			break;
 	}
-	return (count);
+
+	return (length);
+}
+
+/**
+ * in_accept - checks if agiven character is in the string accept
+ * @c: character to be checked
+ * @accept: string containingthe only accepted characters
+ *
+ * Return: 1 if c is in accept. Otherwise 0
+ */
+int in_accept(char c, char *accept)
+{
+	int i;
+
+	for (i = 0; accept[i] != '\0'; i++)
+	{
+		if (c == accept[i])
+			return (1);
+	}
+
+	return (0);
 }
