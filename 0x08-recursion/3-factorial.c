@@ -1,20 +1,15 @@
 #include "main.h"
 /**
- * factorial - returns the factorial of a given number.
- * main - entry point.
- * @n - int one.
- * Return: 0 or -1(Error)
- */
+  * factorial - factorial of a given number.
+  * @n: number.
+  *
+  * Return: factorial.
+  */
 int factorial(int n)
 {
-	if (n <= 1)
+	if (n < 0)
+		return (-1);
+	if (n == 0)
 		return (1);
-       return (n * factorial(n - 1));
-}
-int main(void)
-{
-	int n = 2;
-
-	printf("%i", factorial(n));
-	return (0);
+	return (n * factorial(n - 1));
 }
