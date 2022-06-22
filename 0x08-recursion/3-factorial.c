@@ -14,7 +14,6 @@ int main()
 {
 	int i = 2;
 
-	if (i! == 0)
-		printf("%i", int n(i));
-	return (0):
+	printf("%i", factorial(n));
+	return (0);
 }
